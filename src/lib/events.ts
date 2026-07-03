@@ -28,10 +28,7 @@ export const upcomingEvents: EventItem[] = [
     desc: "いつでも整えるサウナがある家見てみませんか？お気軽にご予約ください。",
     tags: ["フルリフォーム", "家サウナ", "造作洗面化粧台"],
     mainPhoto: "/images/events/sauna-renovation-viewing-main.jpg",
-    photos: [
-      "/images/events/sauna-renovation-viewing-1.jpg",
-      "/images/events/sauna-renovation-viewing-2.jpg",
-    ],
+    photos: [],
     body: "いつでも整えるサウナがある家を、完成見学会としてご公開します。\n\nフルリフォームで実現した造作洗面化粧台や、こだわりの家サウナなど、見どころの多いお住まいです。実際の空間を体感できる貴重な機会ですので、お気軽にご予約ください。",
     eventDates: ["2026-07-04", "2026-07-05", "2026-07-11", "2026-07-12"],
   },

@@ -25,6 +25,9 @@ export const metadata: Metadata = {
     locale: "ja_JP",
     siteName: "株式会社石山建設",
   },
+  verification: {
+    google: "0twRVrdQcef1NEvXFXNqT7TGoScizYSppIlCIaCmK_0",
+  },
 };
 
 export default function RootLayout({

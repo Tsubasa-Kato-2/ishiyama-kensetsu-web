@@ -65,7 +65,7 @@ export default function Footer() {
                   0152-44-2832
                 </a>
               </p>
-              <p className="text-white/40 text-xs">平日 8:00〜18:00</p>
+              <p className="text-white/40 text-xs">平日 9:00〜17:30</p>
             </div>
             {/* SNS */}
             <div className="flex gap-4 mt-6">

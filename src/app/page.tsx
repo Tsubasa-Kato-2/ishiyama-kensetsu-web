@@ -11,6 +11,7 @@ import ServicesMobile from "@/components/ui/ServicesMobile";
 import EventsBanner from "@/components/ui/EventsBanner";
 import { upcomingEvents } from "@/lib/events";
 import { manualInstagramPhotos } from "@/lib/instagram-manual";
+import { newsList } from "@/lib/news";
 
 export const metadata: Metadata = {
   title: "株式会社石山建設 | 家づくりで、物語をつくる",
@@ -142,7 +143,7 @@ export default async function HomePage() {
               <h2 className="font-serif text-3xl sm:text-4xl text-primary font-bold">物語がつづく家</h2>
               <div className="divider" />
               <p className="text-muted text-sm max-w-md">
-                お施主様のリアルな悩みと、石山建設の提案をストーリーとしてお届けします。
+                ひとつひとつの家に、家族の想いと職人の技が宿っています。
               </p>
             </div>
             <Link
@@ -326,14 +327,10 @@ export default async function HomePage() {
           </FadeIn>
           <FadeIn delay={0.08}>
           <div className="space-y-0">
-            {[
-              { date: "2024.06.01", tag: "見学会", text: "【完成見学会】7月13日(土)〜14日(日) 網走市にて開催決定！" },
-              { date: "2024.05.15", tag: "施工事例", text: "新しい施工事例「断熱リノベの工夫」を公開しました。" },
-              { date: "2024.05.01", tag: "お知らせ", text: "ホームページをリニューアルしました。" },
-            ].map((news, i) => (
+            {newsList.map((news) => (
               <Link
-                key={i}
-                href="/events"
+                key={news.slug}
+                href={`/news/${news.slug}`}
                 className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4 py-4 border-b border-border last:border-0 group"
               >
                 <span className="text-muted text-xs font-sans shrink-0">{news.date}</span>
@@ -343,7 +340,7 @@ export default async function HomePage() {
                   {news.tag}
                 </span>
                 <span className="text-primary text-sm group-hover:text-accent transition-colors">
-                  {news.text}
+                  {news.title}
                 </span>
               </Link>
             ))}

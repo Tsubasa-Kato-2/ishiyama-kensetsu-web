@@ -43,7 +43,7 @@ export default function ContactPage() {
                   <a href="tel:0152-44-2832" className="text-primary text-xl font-bold hover:text-accent transition-colors font-sans">
                     0152-44-2832
                   </a>
-                  <p className="text-muted text-xs mt-1 font-sans">平日 8:00〜18:00（土日も対応可）</p>
+                  <p className="text-muted text-xs mt-1 font-sans">平日 9:00〜17:30（土日も対応可）</p>
                 </div>
                 <div>
                   <p className="text-primary font-medium text-sm mb-1">フリーダイヤル</p>
