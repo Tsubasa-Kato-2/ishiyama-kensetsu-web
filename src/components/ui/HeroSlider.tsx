@@ -53,6 +53,7 @@ export default function HeroSlider() {
           priority={i === 0}
           sizes="100vw"
           quality={75}
+          unoptimized
           className={`object-cover ${slide.mobilePosition} sm:object-center transition-opacity duration-1000 ${
             i === current ? "opacity-100" : "opacity-0"
           }`}
