@@ -19,13 +19,28 @@ export default function HeroSlider() {
   const visibleSlides = SLIDES.filter((_, i) => !failed.has(i));
 
   const next = useCallback(() => {
-    setCurrent((prev) => (prev + 1) % SLIDES.length);
-  }, []);
+    setCurrent((prev) => {
+      let nextIdx = (prev + 1) % SLIDES.length;
+      let count = 0;
+      while (failed.has(nextIdx) && count < SLIDES.length) {
+        nextIdx = (nextIdx + 1) % SLIDES.length;
+        count++;
+      }
+      return nextIdx;
+    });
+  }, [failed]);
 
   useEffect(() => {
     const timer = setInterval(next, INTERVAL);
     return () => clearInterval(timer);
   }, [next]);
+
+  // 現在表示中のスライドが失敗したら次へ
+  useEffect(() => {
+    if (failed.has(current)) {
+      next();
+    }
+  }, [failed, current, next]);
 
   return (
     <div className="absolute inset-0">
