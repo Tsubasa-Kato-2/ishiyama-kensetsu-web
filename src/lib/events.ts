@@ -20,7 +20,7 @@ export const upcomingEvents: EventItem[] = [
     id: 1,
     slug: "sauna-renovation-viewing",
     type: "見学会",
-    title: "フルリフォーム完成見学会",
+    title: "【終了】フルリフォーム完成見学会",
     date: "2026年7月11日（土）〜17日（金）・20日（月・祝）",
     time: "10:00〜17:00",
     place: "〒093-0042 北海道網走市潮見5丁目121-45",
