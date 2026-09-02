@@ -22,6 +22,28 @@ const worksData: Record<string, {
   quote?: string;
   instagramUrl?: string;
 }> = {
+  "inherited-home": {
+    tag: "フルリフォーム",
+    title: "受け継いだ家が、ふたりらしい暮らしへ",
+    meta: "網走市潮見 / 築30年",
+    client: "20代ご夫婦",
+    period: "設計〜お引渡し 約4ヶ月",
+    overview: "親から受け継いだ築30年の住まいを、20代のご夫婦のライフスタイルに合わせてフルリフォーム。ダークグレーの外観が象徴的なこのお家は、内外ともに一新し、ふたりらしい暮らしの場所へ生まれ変わりました。",
+    mainPhoto: "/images/works/inherited-home-01-exterior.jpg",
+    before: {
+      heading: "ビフォー：受け継いだ家、そのままでは住みづらい",
+      body: "（後日追加予定）",
+    },
+    proposal: {
+      heading: "石山建設の提案",
+      body: "（後日追加予定）",
+      points: [],
+    },
+    after: {
+      heading: "アフター：ふたりらしい暮らしへ",
+      body: "（後日追加予定）",
+    },
+  },
   "shirokane-new-build": {
     tag: "新築",
     title: "青空に映えるほたて漆喰の外壁と、回遊動線でつながるキッチンの家",

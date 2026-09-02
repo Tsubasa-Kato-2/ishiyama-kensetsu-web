@@ -40,6 +40,15 @@ const works = [
     photo: "/images/works/open-ldk-01-exterior.jpg",
   },
   {
+    slug: "inherited-home",
+    type: "renovation",
+    tag: "フルリフォーム",
+    title: "受け継いだ家が、ふたりらしい暮らしへ",
+    meta: "網走市潮見 / 築30年",
+    desc: "親から受け継いだ住まいを、20代のご夫婦のライフスタイルに合わせてフルリフォーム。ダークグレーの外観が印象的な、ふたりらしい暮らしの場所へ生まれ変わりました。",
+    photo: "/images/works/inherited-home-01-exterior.jpg",
+  },
+  {
     slug: "shirokane-new-build",
     type: "new",
     tag: "新築",
