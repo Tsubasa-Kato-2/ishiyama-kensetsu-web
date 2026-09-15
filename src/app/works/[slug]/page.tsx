@@ -26,13 +26,19 @@ const worksData: Record<string, {
     tag: "フルリフォーム",
     title: "受け継いだ家が、ふたりらしい暮らしへ",
     meta: "網走市潮見 / 築30年",
-    client: "20代ご夫婦",
+    client: "20代",
     period: "設計〜お引渡し 約4ヶ月",
-    overview: "親から受け継いだ築30年の住まいを、20代のご夫婦のライフスタイルに合わせてフルリフォーム。ダークグレーの外観が象徴的なこのお家は、内外ともに一新し、ふたりらしい暮らしの場所へ生まれ変わりました。",
+    overview: "親から受け継いだ築30年の住まいを、20代のライフスタイルに合わせてフルリフォーム。ダークグレーの外観が象徴的なこのお家は、内外ともに一新し、ふたりらしい暮らしの場所へ生まれ変わりました。",
     mainPhoto: "/images/works/inherited-home-01-exterior.jpg",
     before: {
       heading: "ビフォー：受け継いだ家、そのままでは住みづらい",
       body: "（後日追加予定）",
+      photos: [
+        "/images/works/inherited-home-before-01.jpg",
+        "/images/works/inherited-home-before-02.jpg",
+        "/images/works/inherited-home-before-03.jpg",
+        "/images/works/inherited-home-before-04.jpg",
+      ],
     },
     proposal: {
       heading: "石山建設の提案",
@@ -42,6 +48,19 @@ const worksData: Record<string, {
     after: {
       heading: "アフター：ふたりらしい暮らしへ",
       body: "（後日追加予定）",
+      photos: [
+        "/images/works/inherited-home-02.jpg",
+        "/images/works/inherited-home-03.jpg",
+        "/images/works/inherited-home-04.jpg",
+        "/images/works/inherited-home-05.jpg",
+        "/images/works/inherited-home-06.jpg",
+        "/images/works/inherited-home-07.jpg",
+        "/images/works/inherited-home-08.jpg",
+        "/images/works/inherited-home-09.jpg",
+        "/images/works/inherited-home-10.jpg",
+        "/images/works/inherited-home-11.jpg",
+        "/images/works/inherited-home-12.jpg",
+      ],
     },
   },
   "shirokane-new-build": {
