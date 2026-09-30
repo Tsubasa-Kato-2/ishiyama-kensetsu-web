@@ -60,6 +60,8 @@ const worksData: Record<string, {
         "/images/works/inherited-home-10.jpg",
         "/images/works/inherited-home-11.jpg",
         "/images/works/inherited-home-12.jpg",
+        "/images/works/inherited-home-13.jpg",
+        "/images/works/inherited-home-14.jpg",
       ],
     },
   },
