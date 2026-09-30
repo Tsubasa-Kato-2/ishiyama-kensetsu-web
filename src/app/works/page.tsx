@@ -13,15 +13,6 @@ export const metadata: Metadata = {
 
 const works = [
   {
-    slug: "inherited-home",
-    type: "renovation",
-    tag: "フルリフォーム",
-    title: "受け継いだ家が、ふたりらしい暮らしへ",
-    meta: "網走市潮見 / 築30年 / 延床面積 158.76㎡",
-    desc: "ご両親から受け継いだ築30年の住まいをフルリフォーム。ダークグレーの外観に一新し、念願だったサウナと水風呂のある、ふたりらしい暮らしの場所へ生まれ変わりました。",
-    photo: "/images/works/inherited-home-01-exterior.jpg",
-  },
-  {
     slug: "winter-renovation",
     type: "renovation",
     tag: "フルリフォーム",
