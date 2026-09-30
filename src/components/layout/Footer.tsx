@@ -70,7 +70,7 @@ export default function Footer() {
             {/* SNS */}
             <div className="flex gap-4 mt-6">
               <a
-                href="https://www.instagram.com/ishiyama_construction/"
+                href="https://www.instagram.com/ishiyama_kensetsu/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-white/50 hover:text-accent transition-colors"

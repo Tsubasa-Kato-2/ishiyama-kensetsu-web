@@ -226,7 +226,6 @@ API連携を再開する場合のみ必要です。新しい担当者には別�
 
 | 項目 | 内容 |
 |---|---|
-| **Instagramリンクの不一致** | `src/components/layout/Footer.tsx` は `ishiyama_construction`、`src/app/page.tsx` と `src/app/contact/page.tsx` は `ishiyama_kensetsu` を参照しています。正しい方に統一が必要です |
 | **フォームの自動返信なし** | Formspreeの無料プランは自動返信に非対応です。有料プランへの変更、またはWeb3Forms等への移行が必要 |
 | **ヒーロー画像の `unoptimized`** | `src/components/ui/HeroSlider.tsx` でVercelの画像最適化をバイパスしています。元画像が3.9MBで最適化に失敗したための対処でしたが、現在は289KBまで縮小済みのため、この指定を外せばWebP変換が効いてさらに軽くなります |
 | **お施主様の声** | 一部の施工事例（winter-renovation / open-ldk / custom-kitchen / inherited-home）は未掲載です。`quote` フィールドに追記すると表示されます |
