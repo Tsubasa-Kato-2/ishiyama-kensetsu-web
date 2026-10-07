@@ -7,6 +7,13 @@ export type NewsItem = {
 };
 
 export const newsList: NewsItem[] = [
+ {
+    slug: "test-preview",
+    date: "2026.10.07",
+    tag: "お知らせ",
+    title: "【テスト】プレビュー確認用",
+    body: `これはプレビュー確認用のテストです。公開はしません。`,
+  },
   {
     slug: "website-renewal-2026",
     date: "2026.07.02",
