@@ -4,6 +4,7 @@ import Image from "next/image";
 import FadeIn from "@/components/ui/FadeIn";
 import SlideIn from "@/components/ui/SlideIn";
 import PageHero from "@/components/ui/PageHero";
+import { publishedWorks, CATEGORY_LABEL } from "@/lib/works";
 
 export const metadata: Metadata = {
   title: "施工事例",
@@ -11,62 +12,6 @@ export const metadata: Metadata = {
     "石山建設の施工事例一覧。お施主様のビフォーの悩みから完成後の暮らしまで、ストーリーとしてご紹介します。",
 };
 
-const works = [
-  {
-    slug: "inherited-home",
-    type: "renovation",
-    tag: "フルリフォーム",
-    title: "受け継いだ家が、ふたりらしい暮らしへ",
-    meta: "網走市潮見 / 築30年 / 延床面積 158.76㎡",
-    desc: "ご両親から受け継いだ築30年の住まいをフルリフォーム。ダークグレーの外観に一新し、念願だったサウナと水風呂のある、ふたりらしい暮らしの場所へ生まれ変わりました。",
-    photo: "/images/works/inherited-home-01-exterior.jpg",
-  },
-  {
-    slug: "winter-renovation",
-    type: "renovation",
-    tag: "フルリフォーム",
-    title: "抜け感のあるネイビー外観と業務用キッチンのある住まい",
-    meta: "小清水町 / 築27年 / 延床面積 147.56㎡",
-    desc: "アウトドアがお好きなご夫婦。少し抜け感のあるネイビーの外観と、料理人の奥様こだわりの業務用キッチンが特徴的です。",
-    photo: "/images/works/winter-renovation-01-exterior.jpg",
-  },
-  {
-    slug: "study-corner",
-    type: "renovation",
-    tag: "フルリフォーム",
-    title: "昭和の面影を残す住まいから、黒を基調としたモダンでスタイリッシュな空間へ",
-    meta: "網走市 / 築48年 / 延床面積 88.29㎡",
-    desc: "木目調の壁や和室があった味わい深い住まいを、ブラックの外観とダークブラウンの内装で大人モダンな空間にフルリノベーション。",
-    photo: "/images/works/study-corner-00-exterior.jpg",
-  },
-  {
-    slug: "open-ldk",
-    type: "renovation",
-    tag: "フルリフォーム",
-    title: "スマートなブラック外観に一新した、断熱フルリフォーム",
-    meta: "北見市 / 築32年 / 延床面積 90.72㎡",
-    desc: "スマートなブラックで仕上げた外観のこのお家は、内外共にデザイン・間取りを一新。断熱改修も実施し、ご主人こだわりの造作家具が雰囲気にぴったりです。",
-    photo: "/images/works/open-ldk-01-exterior.jpg",
-  },
-  {
-    slug: "shirokane-new-build",
-    type: "new",
-    tag: "新築",
-    title: "青空に映えるほたて漆喰の外壁と、回遊動線でつながるキッチンの家",
-    meta: "網走市 / 4LDK / 延床面積 103.50㎡",
-    desc: "青空に映えるほたて漆喰の外壁と象徴的なファザードがアイコンのお家。お料理上手な奥様のこだわりのキッチンと回遊動線が日々の家事ラクを実現させています。",
-    photo: "/images/works/shirokane-01-exterior.jpg",
-  },
-  {
-    slug: "custom-kitchen",
-    type: "new",
-    tag: "新築",
-    title: "オホーツク海と呼応する、サックスブルーの外壁とステンレスキッチンの家",
-    meta: "網走市 / 3LDK / 延床面積 110.55㎡",
-    desc: "目にも鮮やかなサックスブルーの漆喰がアイコンのお家。窓から覗くオホーツク海に染められたようにリンクしています。",
-    photo: "/images/works/custom-kitchen-01-exterior.jpg",
-  },
-];
 
 export default async function WorksPage({
   searchParams,
@@ -74,7 +19,9 @@ export default async function WorksPage({
   searchParams: Promise<{ type?: string }>;
 }) {
   const { type } = await searchParams;
-  const filtered = type ? works.filter((w) => w.type === type) : works;
+  const filtered = type
+    ? publishedWorks.filter((w) => w.category === type)
+    : publishedWorks;
 
   return (
     <>
@@ -131,9 +78,9 @@ export default async function WorksPage({
               >
                 {/* Image */}
                 <div className="aspect-[4/3] bg-beige-dark relative overflow-hidden">
-                  {work.photo ? (
+                  {work.mainPhoto ? (
                     <Image
-                      src={work.photo}
+                      src={work.mainPhoto}
                       alt={work.title}
                       fill
                       sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
@@ -152,7 +99,7 @@ export default async function WorksPage({
                     </>
                   )}
                   <span className="absolute top-4 left-4 bg-accent text-white text-xs px-3 py-1 tracking-wide font-sans">
-                    {work.tag}
+                    {CATEGORY_LABEL[work.category]}
                   </span>
                 </div>
 
