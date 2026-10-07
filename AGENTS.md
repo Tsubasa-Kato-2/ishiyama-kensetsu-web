@@ -56,32 +56,38 @@ $bmp.Save("出力.jpg", $codec, $ep); $bmp.Dispose(); $img.Dispose()
 
 ---
 
-## 2. 施工事例は2ファイル構成（片方だけ直すと壊れる）
+## 2. 施工事例は `src/lib/works.ts` に集約されている
 
-`src/lib/works.ts` は**存在しない**。データは2箇所に分かれている。
+一覧（`src/app/works/page.tsx`）と詳細（`src/app/works/[slug]/page.tsx`）の
+両方がこのファイルを読む。**データ編集はこの1ファイルだけで完結する。**
+ページ側のファイルは見た目の定義のみで、データを持たせないこと。
 
-| ファイル | 役割 |
-|---|---|
-| `src/app/works/page.tsx` の `works` 配列 | 一覧カード |
-| `src/app/works/[slug]/page.tsx` の `worksData` | 詳細ページ |
+以前は一覧と詳細でデータが二重管理されており、`meta` やタイトルが食い違う
+不具合が実際に発生していた。その再発防止のために統合した経緯がある。
 
-`slug` で紐付く。**1件の追加・修正では必ず両方を確認する。**
-過去に `meta`（所在地・築年数・延床面積）が一覧と詳細でズレた不具合が発生している。
-
-### 詳細ページは `tag` で表示構成が分岐する
+### 表示は `category` で分岐する
 
 ```
-tag === "新築"  → 概要 → photos（トップレベル）→ quote
-それ以外        → 概要 → before → before.photos → after → after.photos → quote
+category === "new"  → 概要 → photos → quote
+"renovation"        → 概要 → before → before.photos → after → after.photos → quote
 ```
 
-`before` / `proposal` / `after` は**新築でも型上必須**。表示されなくても省略できない。
+- `tag` フィールドは**廃止**。表示ラベルは `CATEGORY_LABEL[work.category]` で導出する
+- `before` / `proposal` / `after` は**すべて任意**。新築では省略してよい
+- **`proposal` はどのページにも描画されていない。** データは存在するが未使用
 
 ### 非公開にする方法
 
-**一覧側の配列から該当ブロックを削除する。** 詳細側のデータは残す。
-これで一覧から消えるが、URL直打ちでは確認できる。公開前の事例を仕込む際の
-確立された運用。「まだ公開しないで」と言われたらこの方法を使う。
+`published: false` にする。配列から削除しない。
+一覧から消えるがURL直打ちでは見られる。「まだ公開しないで」と言われたらこれを使う。
+
+### ヘルパー
+
+| 名前 | 用途 |
+|---|---|
+| `works` | 全件（`generateStaticParams` 用） |
+| `publishedWorks` | 一覧表示用（`published: true` のみ） |
+| `findWork(slug)` | 1件取得 |
 
 ---
 
@@ -91,6 +97,7 @@ CMSはない。すべてソース直編集。
 
 | 内容 | ファイル |
 |---|---|
+| 施工事例 | `src/lib/works.ts` |
 | トップのお知らせ | `src/lib/news.ts` |
 | イベント・見学会 | `src/lib/events.ts` |
 | ブログ記事 | `src/lib/blogs.ts` |
